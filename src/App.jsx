@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import Expense from "./components/Expenses/Expense";
 import ExpenseForm from "./components/Expenses/NewExpense/ExpenseForm";
+import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 
 let DUMMY_DATA = [
   {
@@ -24,11 +26,16 @@ let DUMMY_DATA = [
 ];
 
 const App = () => {
+  const [formData, setFormData] = useState(DUMMY_DATA);
+
+  const onFormSubmit = (data) => {
+    setFormData((prevData) => [...prevData, data]);
+  };
   return (
     <div className="">
       <h1 className="text-4xl">Lets get started!</h1>
-      <ExpenseForm />
-      <Expense data={DUMMY_DATA} />
+      <NewExpense onFormSubmit={onFormSubmit} />
+      <Expense data={formData} />
     </div>
   );
 };
