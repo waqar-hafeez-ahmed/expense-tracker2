@@ -11,7 +11,7 @@ const NewExpense = (props) => {
     setShowForm(false);
   };
   return (
-    <div className="bg-tertiary max-w-3xl w-[95%] rounded-xl mx-auto my-8 p-4 shadow-[0_1px_8px_0_rgba(0,0,0,0.5)]">
+    <div className="bg-[#d3a8fcd2] hover:bg-[#d3a8fcd2] max-w-3xl w-[95%] rounded-xl mx-auto my-8 p-4 shadow-[0_1px_8px_0_rgba(0,0,0,0.5)]">
       {!showForm && (
         <div className="mx-auto w-full text-center">
           <button

@@ -36,7 +36,7 @@ const ExpenseForm = (props) => {
 
   return (
     <form onSubmit={onFormSubmitHandler} className=" mt-3 mx-4 text-left">
-      <div className="flex flex-wrap gap-5">
+      <div className="flex max-sm:justify-center max-sm:text-center flex-wrap gap-5">
         <div className="flex flex-col">
           <label
             className="font-poppin text-sm font-semibold mb-2 block"
@@ -45,7 +45,7 @@ const ExpenseForm = (props) => {
             Title
           </label>
           <input
-            className="font-poppin text-xs font-medium rounded-md py-1 px-2 border border-[#ccc] w-80"
+            className="font-poppin text-xs font-medium rounded-md py-1 px-2 border border-[#ccc] w-[20rem] max-sm:w-[17rem]"
             type="text"
             id="title"
             value={enteredTitle}
@@ -60,7 +60,7 @@ const ExpenseForm = (props) => {
             Amount
           </label>
           <input
-            className="font-poppin text-xs font-medium rounded-md py-1 px-2 border border-[#ccc] w-80"
+            className="font-poppin text-xs font-medium rounded-md py-1 px-2 border border-[#ccc] w-[20rem] max-sm:w-[17rem]"
             type="number"
             id="amount"
             min="0.01"
@@ -77,7 +77,7 @@ const ExpenseForm = (props) => {
             Date
           </label>
           <input
-            className="font-poppin text-xs font-medium rounded-md py-1 px-2 border border-[#ccc] w-80"
+            className="font-poppin text-xs font-medium rounded-md py-1 px-2 border border-[#ccc] w-80 max-sm:w-[17rem]"
             type="date"
             id="date"
             min="2019-01-01"
@@ -87,7 +87,7 @@ const ExpenseForm = (props) => {
           />
         </div>
       </div>
-      <div className="text-right">
+      <div className="text-right mt-4 max-sm:text-center">
         <button
           className="py-1 px-2 bg-primary text-white rounded-lg hover:bg-secondary border border-white"
           type="submit"
