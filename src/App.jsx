@@ -50,7 +50,10 @@ const App = () => {
     setFormData((prevData) => [...prevData, data]);
   };
   return (
-    <div className="">
+    <div>
+      <h1 className="text-lg text-black font-baloo font-medium px-2">
+        Expense Tracker
+      </h1>
       <NewExpense onFormSubmit={onFormSubmit} />
       <Expense data={formData} />
     </div>
