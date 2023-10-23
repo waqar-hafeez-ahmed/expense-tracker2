@@ -15,21 +15,15 @@ const Expense = (props) => {
   );
   fitleredData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  // let visibleData = fitleredData;
-  // const [data, setData] = useState(visibleData);
-  // const deleteItem = (item) => {
-  //   setData(visibleData.filter((i) => i !== item));
-  // };
-  // console.log(data);
-
   let visibleValue = fitleredData.map((item) => (
-    <div
+    <ExpenseItem
+      id={item.id}
       key={item.id}
-      className="cursor-pointer"
-      onClick={() => deleteItem(item)}
-    >
-      <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
-    </div>
+      title={item.title}
+      amount={item.amount}
+      date={item.date}
+      onDelete={props.onDeleteItem}
+    />
   ));
 
   if (fitleredData.length === 0) {
@@ -47,7 +41,9 @@ const Expense = (props) => {
         onFilteredExpense={onFilterExpenseHandler}
       />
       <Chart expenses={fitleredData} />
-      {visibleValue}
+      <div>
+        <ul>{visibleValue}</ul>
+      </div>
     </Card>
   );
 };

@@ -49,13 +49,20 @@ const App = () => {
   const onFormSubmit = (data) => {
     setFormData((prevData) => [...prevData, data]);
   };
+
+  const deleteItemHandler = (itemId) => {
+    setFormData((prevData) => {
+      const updatedData = prevData.filter((data) => data.id !== itemId);
+      return updatedData;
+    });
+  };
   return (
     <div>
       <h1 className="text-lg text-black font-baloo font-medium px-2">
         Expense Tracker
       </h1>
       <NewExpense onFormSubmit={onFormSubmit} />
-      <Expense data={formData} />
+      <Expense data={formData} onDeleteItem={deleteItemHandler} />
     </div>
   );
 };
